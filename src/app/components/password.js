@@ -1,7 +1,8 @@
-import { useLoginContext } from "../provider";
+import { useAtom } from "jotai";
+import { passwordAtom } from "../store/main.store";
 
 const Password = () => {
-  const { password, setPassword } = useLoginContext();
+  const [password, setPassword] = useAtom(passwordAtom);
 
   return (
     <div>

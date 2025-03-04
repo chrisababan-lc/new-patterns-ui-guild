@@ -1,7 +1,14 @@
-import { useLoginContext } from "../provider";
+import { useAtomValue } from "jotai";
+import { usernameAtom, passwordAtom } from "../store/main.store";
 
 const Form = ({ children }) => {
-  const { handleSubmit } = useLoginContext();
+  const username = useAtomValue(usernameAtom);
+  const password = useAtomValue(passwordAtom);
+
+  const handleSubmit = () => {
+    // call API and submit username and password.
+    console.log("params", username, password);
+  };
 
   return (
     <form
