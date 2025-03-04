@@ -1,6 +1,13 @@
-const Form = ({ onSubmit, children }) => {
+import { useLoginContext } from "../provider";
+
+const Form = ({ children }) => {
+  const { handleSubmit } = useLoginContext();
+
   return (
-    <form onSubmit={onSubmit} className="border-2 border-black p-6 rounded-lg">
+    <form
+      onSubmit={handleSubmit}
+      className="border-2 border-black p-6 rounded-lg"
+    >
       {children}
     </form>
   );

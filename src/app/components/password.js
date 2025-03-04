@@ -1,4 +1,8 @@
-const Password = ({ password, onChange }) => {
+import { useLoginContext } from "../provider";
+
+const Password = () => {
+  const { password, setPassword } = useLoginContext();
+
   return (
     <div>
       <label className="block mt-4">Password</label>
@@ -6,7 +10,7 @@ const Password = ({ password, onChange }) => {
         type="password"
         className="border-2 border-black p-1 rounded-lg"
         value={password}
-        onChange={onChange}
+        onChange={(e) => setPassword(e.target.value)}
       />
     </div>
   );
